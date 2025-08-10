@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp:*)",
+      "Bash(npm i:*)",
+      "Bash(npm search:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": []
+  },
+  "enabledMcpjsonServers": [
+    "filesystem",
+    "playwright",
+    "github",
+    "sqlite",
+    "openapi"
+  ]
+}

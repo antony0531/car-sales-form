@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales - Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input, select, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us - Get Your Best Car Deal</h1>
+    <p>Fill out this form and we'll contact you with our best offers!</p>
+    
+    <!-- SIMPLE NETLIFY FORM - EXACTLY LIKE THE ONE THAT WORKED -->
+    <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone" required>
+        <select name="interest" required>
+            <option value="">What are you interested in?</option>
+            <option value="new">New Car</option>
+            <option value="used">Used Car</option>
+            <option value="trade">Trade-In</option>
+        </select>
+        <button type="submit">Send Message</button>
+    </form>
+    
+    <p>We'll get back to you within 24 hours!</p>
+</body>
+</html>

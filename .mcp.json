@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "mcp-server-filesystem"
+      ],
+      "env": {}
+    },
+    "playwright": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "mcp-server-playwright"
+      ],
+      "env": {}
+    },
+    "github": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "mcp-server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": ""
+      }
+    }
+  }
+}

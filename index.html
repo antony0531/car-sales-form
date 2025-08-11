@@ -389,6 +389,122 @@
             transform: scale(1.05);
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 4rem 20px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .quote-icon {
+            font-size: 3rem;
+            color: #ffd700;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .customer-details {
+            flex: 1;
+        }
+        
+        .customer-name {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 0.2rem;
+        }
+        
+        .customer-vehicle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Trust Badges */
+        .trust-section {
+            background: white;
+            padding: 3rem 20px;
+            text-align: center;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .badge-icon {
+            font-size: 3rem;
+            color: #1e3c72;
+        }
+        
+        .badge-text {
+            font-weight: bold;
+            color: #666;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -592,6 +708,87 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="section">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real people, real experiences</p>
+                
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            "Best car buying experience ever! They got me approved in minutes and I drove home the same day. The team was professional and no pressure at all."
+                        </p>
+                        <div class="customer-info">
+                            <div class="customer-avatar">JD</div>
+                            <div class="customer-details">
+                                <div class="customer-name">John Davis</div>
+                                <div class="customer-vehicle">2023 Honda Accord</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            "I had bad credit and thought I'd never get approved. They worked with me and got me a great rate. Now I'm driving my dream car!"
+                        </p>
+                        <div class="customer-info">
+                            <div class="customer-avatar">SM</div>
+                            <div class="customer-details">
+                                <div class="customer-name">Sarah Miller</div>
+                                <div class="customer-vehicle">2023 Toyota RAV4</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <span class="quote-icon">"</span>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            "They gave me $5,000 more for my trade-in than any other dealer. Plus, the whole process took less than 2 hours. Highly recommend!"
+                        </p>
+                        <div class="customer-info">
+                            <div class="customer-avatar">RC</div>
+                            <div class="customer-details">
+                                <div class="customer-name">Robert Chen</div>
+                                <div class="customer-vehicle">2022 Honda Pilot</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trust Section -->
+        <section class="trust-section">
+            <h2 class="section-title">Trusted by Thousands</h2>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="badge-icon">🏆</div>
+                    <div class="badge-text">Award Winning</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="badge-icon">🔒</div>
+                    <div class="badge-text">Secure & Safe</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="badge-icon">📜</div>
+                    <div class="badge-text">Licensed Dealer</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="badge-icon">🤝</div>
+                    <div class="badge-text">BBB Accredited</div>
                 </div>
             </div>
         </section>

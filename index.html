@@ -75,35 +75,76 @@
         
         /* Main Content */
         main {
-            margin-top: 80px;
-            padding: 2rem 20px;
+            margin-top: 60px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23fff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,213.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            padding: 4rem 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
             max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
         
-        h1 {
-            color: #1e3c72;
-            font-size: 2.5rem;
+        .hero-text {
+            text-align: left;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-align: center;
+            text-align: left;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .tagline {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
+        .hero .tagline {
+            text-align: left;
+            font-size: 1.3rem;
+            color: #ffd700;
             margin-bottom: 2rem;
         }
         
+        .benefits {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .benefits li {
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .benefits li:before {
+            content: "✓ ";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
         /* Form Styles - Keeping it working! */
-        form {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        .form-container {
+            background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        form {
+            margin: 0;
         }
         
         form input, form select, form button {
@@ -142,14 +183,30 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Sections */
+        .section {
+            padding: 4rem 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
             
-            h1 {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
                 font-size: 2rem;
+                text-align: center;
+            }
+            
+            .hero .tagline, .hero-text {
+                text-align: center;
             }
         }
     </style>
@@ -169,26 +226,41 @@
     </header>
     
     <main>
-        <h1>Drive Your Dream Car Today!</h1>
-        <p class="tagline">Get the best deals on quality vehicles with easy financing</p>
-        
-        <!-- SIMPLE NETLIFY FORM - KEEPING EXACT STRUCTURE THAT WORKS -->
-        <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
-            <div class="form-header">
-                <h2>Get Your Free Quote</h2>
-                <p>Fill out this form for exclusive deals!</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Drive Your Dream Car Today!</h1>
+                    <p class="tagline">Save thousands with our exclusive deals</p>
+                    <ul class="benefits">
+                        <li>0% APR Financing Available</li>
+                        <li>No Money Down Options</li>
+                        <li>Trade-In Welcome</li>
+                        <li>Same Day Approval</li>
+                    </ul>
+                </div>
+                
+                <div class="form-container">
+                    <!-- SIMPLE NETLIFY FORM - KEEPING EXACT STRUCTURE THAT WORKS -->
+                    <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+                        <div class="form-header">
+                            <h2>Get Your Free Quote</h2>
+                            <p>Limited time offer - Act now!</p>
+                        </div>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="tel" name="phone" placeholder="Your Phone" required>
+                        <select name="interest" required>
+                            <option value="">What are you interested in?</option>
+                            <option value="new">New Car</option>
+                            <option value="used">Used Car</option>
+                            <option value="trade">Trade-In</option>
+                        </select>
+                        <button type="submit">Get My Free Quote →</button>
+                    </form>
+                </div>
             </div>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone" required>
-            <select name="interest" required>
-                <option value="">What are you interested in?</option>
-                <option value="new">New Car</option>
-                <option value="used">Used Car</option>
-                <option value="trade">Trade-In</option>
-            </select>
-            <button type="submit">Get My Free Quote</button>
-        </form>
+        </section>
     </main>
 </body>
 </html>
